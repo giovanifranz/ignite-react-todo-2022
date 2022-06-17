@@ -1,0 +1,218 @@
+.content {
+  display: grid;
+  margin-top: 4rem;
+  justify-content: center;
+  grid-area: auto;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 46rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.tasks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tasksCreatedText {
+  font-weight: 700;
+  color: var(--blue-300);
+}
+
+.counter {
+  background-color: var(--gray-400);
+  padding: 0 0.5rem 0 0.5rem;
+  border-radius: 8px;
+  color: var(--gray-300);
+  font-weight: 700;
+}
+
+.tasksFinishedText{
+  font-weight: 700;
+  color: var(--purple-300);
+}
+
+.taskOff {
+  width: 46rem;
+  word-break: break-all;
+  border-radius: 8px;
+  border-top: solid 1px var(--gray-400);
+}
+
+.clipBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0 0 0;
+  margin-bottom: 1rem;
+  color: var(--gray-400);
+}
+
+.taskOffStrong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.taskOffSpan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.newTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.687rem;
+}
+
+.newTask form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newTask form textarea {
+  height: 3.374rem;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 40rem;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  border: solid 1px var(--gray-700);
+}
+
+.buttonSubmit {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 8px;
+
+  background: var(--blue-700);
+  border: 0;
+
+  font-weight: 700;
+
+  color: var(--gray-100);
+
+  transition: 0.2s;
+}
+
+.buttonSubmit:disabled{
+  filter: brightness(0.5);
+  cursor: not-allowed;
+}
+
+.buttonSubmit:disabled:hover{
+  background: var(--blue-700);
+}
+
+.buttonSubmit div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.buttonSubmit:hover {
+  background: var(--blue-300);
+}
+
+.taskList {
+  display: flex;
+  align-items: center;
+  background: var(--gray-500);
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 8px;
+  border: solid 1px var(--gray-400);
+  color: var(--gray-100);
+  margin-bottom: 0.75rem;
+}
+
+.completed + .taskText {
+  text-decoration:line-through;
+  opacity: 0.6;
+}
+
+.buttonDelete{
+  margin-left: auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--gray-300);
+  transition: 0.2s;
+}
+
+.buttonDelete:hover{
+  color: var(--red-500);
+}
+
+.checkContainer {
+  display: flex;
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* Esconder o checkbox padrão */
+.checkContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: var(--gray-500);
+  border: solid 2px var(--blue-300);
+  border-radius: 100px;
+}
+
+.checkContainer:hover input ~ .checkmark {
+  border: solid 2px var(--blue-700);
+  background-color: rgba(30, 111, 159, 0.2);
+}
+
+.checkContainer input:checked ~ .checkmark {
+  background-color: var(--purple-700);
+  border: solid 2px var(--purple-700);
+}
+
+.checkContainer input:checked ~ .checkmark:hover {
+  background-color: var(--purple-300);
+  border: solid 2px var(--purple-700);
+}
+
+.checkContainer .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 3px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkContainer input:checked ~ .checkmark:after {
+  display: block;
+}
